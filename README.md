@@ -2,29 +2,26 @@
 
 ## Prerequisite
 
-Install poetry & dependencies:
+Install & setup [direnv](https://direnv.net/):
 
 ```
-curl -sSL https://install.python-poetry.org | python3 -
-poetry config virtualenvs.in-project true
-poetry install
+brew install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
 
-Setting up local cluster:
+Install latest version of [devbox](https://www.jetify.com/devbox/):
 
 ```
-sh .tools/cluster-delete.sh
-sh ./tools/cluster-create.sh
+curl -fsSL https://get.jetify.com/devbox | bash
+```
+
+Initialize setup scripts:
+
+```
+task setup
 ```
 
 ## Usage
-
-Starting services for local development:
-
-```
-task start-consumer
-task start-publisher
-```
 
 Running the full k8s stack:
 
@@ -34,4 +31,11 @@ tilt up
 # to stop current pods
 # and clear any defined CRDs
 tilt down
+```
+
+Starting individual services:
+
+```
+task start-consumer
+task start-publisher
 ```
