@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-nats-services"
+version = "0.1.0"
+description = ""
+authors = ["Mitja Kramberger <mitja.kramberger@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+publisher = { path = "services/publisher/", develop = true }
+consumer = { path = "services/consumer/", develop = true }
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

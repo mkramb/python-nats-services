@@ -1,6 +1,9 @@
 {
-  "python.defaultInterpreterPath": ".venv/bin/python",
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.indexing": true,
-  "editor.defaultFormatter": "ms-python.black-formatter"
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.indexing": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

@@ -1,0 +1,12 @@
+version: "3"
+
+tasks:
+  start-consumer:
+    desc: Starts publisher service
+    cmds:
+      - poetry run fastapi dev services/publisher/app.py
+
+  start-publisher:
+    desc: Starts consumer service
+    cmds:
+      - poetry run fastapi dev services/consumer/app.py
