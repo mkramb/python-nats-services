@@ -1,0 +1,16 @@
+FROM python:3.10-slim-bookworm
+
+ARG service_name
+ENV SERVICE_NAME ${service_name}
+
+RUN pip install poetry==1.7.0
+
+ENV POETRY_VIRTUALENVS_CREATE=false
+ENV POETRY_VIRTUALENVS_IN_PROJECT=false
+ENV PYTHONPATH=${PYTHONPATH}:${PWD} 
+
+WORKDIR /service
+COPY ./services/${SERVICE_NAME} .
+
+RUN poetry install --no-dev --no-interaction --no-ansi
+CMD poetry run fastapi run app.py

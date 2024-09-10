@@ -14,7 +14,7 @@ def get_crd_kind(c):
 def init_nats_crds():
     # install the JetStream CRDs, using local copy to avoid download flake
     bundle = local(
-        "cat ./.k8s/nack-manifests/" + NACK_VERSION + ".crds.yml", quiet=True
+        "cat ./.k8s/nack/" + NACK_VERSION + ".crds.yml", quiet=True
     )
     k8s_yaml(bundle)
 

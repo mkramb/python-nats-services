@@ -1,0 +1,20 @@
+def define_service(service_name, port_forwards=[], resource_deps=[]):
+    k8s_yaml(".k8s/services/" + service_name + ".yml")
+    k8s_resource(
+        service_name,
+        port_forwards=port_forwards,
+        resource_deps=resource_deps,
+        labels=["services"]
+    )
+
+def build_service(service_name):
+    docker_build(
+        service_name,
+        ".",
+        dockerfile="Dockerfile.services",
+        build_args={"service_name": service_name},
+        only=[
+            "./services/" + service_name,
+        ],
+        network="host"
+    )

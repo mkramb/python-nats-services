@@ -1,4 +1,10 @@
 {
+    "editor.accessibilitySupport": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.associations": {
+        "Tiltfile.*": "tiltfile",
+    },
+    // python
     "python.defaultInterpreterPath": ".venv/bin/python",
     "python.analysis.autoImportCompletions": true,
     "python.analysis.indexing": true,
