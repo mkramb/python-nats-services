@@ -1,4 +1,4 @@
-# Python NATS Microservices
+# Python Microservices (with NATS broker)
 
 - the foundation is FastAPI which is a modern & fast (high-performance) framework
 - for handling events we utilize FastStream (integrates with FastAPI) for effortless event stream integration
