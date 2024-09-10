@@ -1,12 +1,15 @@
 from uvicorn import run
 from loguru import logger
+from asyncio import create_task
 from pydantic import BaseModel
 from fastapi import FastAPI, status
 
-from consumer.logger import LogRequestsMiddleware, configure_logging
+from consumer.logger import configure_logging
+from consumer.router import router
+
 
 app = FastAPI()
-app.add_middleware(LogRequestsMiddleware)
+app.include_router(router)
 
 
 class HealthCheck(BaseModel):
@@ -26,4 +29,4 @@ def get_health() -> HealthCheck:
 
 if __name__ == "__main__":
     configure_logging()
-    run(app, host="0.0.0.0", port=3000, access_log=False)
+    run(app, host="0.0.0.0", access_log=False, port=3000)

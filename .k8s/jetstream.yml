@@ -9,7 +9,6 @@ spec:
     name: events
     subjects:
         - "events.*.*"
-        - "events.*.*.*"
     storage: "file"
     replicas: 1
 ---
@@ -27,3 +26,20 @@ spec:
         - $JS.EVENT.ADVISORY.CONSUMER.MAX_DELIVERIES.events.*
     storage: "file"
     replicas: 1
+---
+#
+# consumer: events-consumer
+#
+apiVersion: jetstream.nats.io/v1beta2
+kind: Consumer
+metadata:
+    name: events-consumer
+spec:
+    streamName: events
+    durableName: events-consumer
+    filterSubject: events.*.*
+    ackPolicy: explicit
+    ackWait: 10s
+    maxAckPending: 1
+    maxDeliver: 5
+
