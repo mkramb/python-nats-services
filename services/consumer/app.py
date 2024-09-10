@@ -1,8 +1,8 @@
 from uvicorn import run
 from fastapi import FastAPI, status
 
-from consumer.models import HealthCheck
 from consumer.logger import configure_logging
+from consumer.models import HealthCheck
 from consumer.router import router
 
 
