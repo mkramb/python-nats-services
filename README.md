@@ -32,10 +32,3 @@ tilt up
 # and clear any defined CRDs
 tilt down
 ```
-
-Starting individual services:
-
-```
-task start-consumer
-task start-publisher
-```
