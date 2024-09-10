@@ -1,0 +1,29 @@
+#
+# stream: events
+#
+apiVersion: jetstream.nats.io/v1beta2
+kind: Stream
+metadata:
+    name: events
+spec:
+    name: events
+    subjects:
+        - "events.*.*"
+        - "events.*.*.*"
+    storage: "file"
+    replicas: 1
+---
+#
+# stream: events-dlq
+#
+apiVersion: jetstream.nats.io/v1beta2
+kind: Stream
+metadata:
+    name: events-dlq
+spec:
+    name: events-dlq
+    subjects:
+        - events-dlq
+        - $JS.EVENT.ADVISORY.CONSUMER.MAX_DELIVERIES.events.*
+    storage: "file"
+    replicas: 1

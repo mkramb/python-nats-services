@@ -1,3 +1,6 @@
+load("Tilt.crds.py", "init_nats_crds")
+
+update_settings(max_parallel_updates=5)
 docker_prune_settings(
   disable=False,
   num_builds=3,
@@ -6,3 +9,5 @@ docker_prune_settings(
 
 k8s_yaml(".k8s/nats.yaml")
 k8s_resource("nats", port_forwards=["4222:4222"])
+
+init_nats_crds()
