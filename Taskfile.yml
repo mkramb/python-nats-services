@@ -16,5 +16,4 @@ tasks:
     desc: Sets up kinds cluster
     cmds:
       - .tools/delete-cluster.sh
-      - docker system prune -f -a --volumes
       - .tools/create-cluster.sh
