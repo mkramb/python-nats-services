@@ -1,5 +1,9 @@
 # Python NATS Microservices
 
+- the foundation is FastAPI which is a modern, fast (high-performance), web framework for building APIs (uses ASGI)
+- for handling events we utilize FastStream (integrates with FastAPI) for effortless event stream integration (with various brokers()
+- lastly, the monorepo setup is configured so every service lists it's own dependencies, which are then utilize for doing a Docker build
+
 ## Prerequisite
 
 Install & setup [direnv](https://direnv.net/):
