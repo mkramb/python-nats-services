@@ -32,3 +32,12 @@ tilt up
 # and clear any defined CRDs
 tilt down
 ```
+
+Then we can execute:
+
+```
+curl -i http://localhost:3001/emit
+```
+
+- which should trigger a message from publisher service
+- that is then processed by consumer service (check the logs)

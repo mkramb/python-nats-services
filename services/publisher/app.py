@@ -1,22 +1,17 @@
 from uvicorn import run
-from loguru import logger
-from pydantic import BaseModel
 from fastapi import FastAPI, status
 
-from publisher.logger import LogRequestsMiddleware, configure_logging
+from publisher.models import HealthCheck
+from publisher.logger import configure_logging
+from publisher.router import router
 
 app = FastAPI()
-app.add_middleware(LogRequestsMiddleware)
-
-
-class HealthCheck(BaseModel):
-    status: str = "OK"
+app.include_router(router)
 
 
 @app.get(
     "/health",
     tags=["healthcheck"],
-    summary="Perform a Health Check",
     status_code=status.HTTP_200_OK,
     response_model=HealthCheck,
 )
@@ -26,4 +21,4 @@ def get_health() -> HealthCheck:
 
 if __name__ == "__main__":
     configure_logging()
-    run(app, host="0.0.0.0", port=3000, access_log=False)
+    run(app, host="0.0.0.0", access_log=False, port=3000)
