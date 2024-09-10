@@ -145,6 +145,54 @@
         }
       }
     },
+    "kubernetes-helm@3.15.1": {
+      "last_modified": "2024-06-12T20:55:33Z",
+      "resolved": "github:NixOS/nixpkgs/a9858885e197f984d92d7fe64e9fff6b2e488d40#kubernetes-helm",
+      "source": "devbox-search",
+      "version": "3.15.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f0lj08sp06flvvp770l6irhrhlw1arw7-kubernetes-helm-3.15.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/f0lj08sp06flvvp770l6irhrhlw1arw7-kubernetes-helm-3.15.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ykadw4ln8npdcwc4lx47ssf87v3wxm82-kubernetes-helm-3.15.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ykadw4ln8npdcwc4lx47ssf87v3wxm82-kubernetes-helm-3.15.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kiyg1mjn0dk8vhcbpnpgfrcim0q7zwkw-kubernetes-helm-3.15.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kiyg1mjn0dk8vhcbpnpgfrcim0q7zwkw-kubernetes-helm-3.15.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/v871y4jpiyckcbxsg1zbvrniq1i98m6w-kubernetes-helm-3.15.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/v871y4jpiyckcbxsg1zbvrniq1i98m6w-kubernetes-helm-3.15.1"
+        }
+      }
+    },
     "natscli@0.1.4": {
       "last_modified": "2024-07-20T09:11:00Z",
       "resolved": "github:NixOS/nixpkgs/6e14bbce7bea6c4efd7adfa88a40dac750d80100#natscli",
