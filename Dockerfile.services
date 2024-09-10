@@ -13,4 +13,5 @@ WORKDIR /service
 COPY ./services/${SERVICE_NAME} .
 
 RUN poetry install --no-dev --no-interaction --no-ansi
-CMD poetry run fastapi run app.py
+CMD poetry run python app.py
+

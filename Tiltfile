@@ -16,5 +16,5 @@ init_nats_crds()
 build_service("consumer")
 build_service("publisher")
 
-define_service("consumer", ["3000:8000"], ["nats","nats-nack"])
-define_service("publisher", ["3001:8000"], ["nats","nats-nack"])
+define_service("consumer", ["3000:3000"], ["nats","nats-nack"])
+define_service("publisher", ["3001:3000"], ["nats","nats-nack"])
