@@ -1,6 +1,6 @@
 from loguru import logger
-from faststream.nats.fastapi import NatsRouter
 from faststream.nats import PullSub
+from faststream.nats.fastapi import NatsRouter
 
 from consumer.models import Incoming
 

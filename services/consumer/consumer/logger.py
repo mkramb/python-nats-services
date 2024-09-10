@@ -1,8 +1,6 @@
 import sys
 
 from loguru import logger
-from fastapi import Request
-from starlette.middleware.base import BaseHTTPMiddleware
 
 
 def format_record(record):
