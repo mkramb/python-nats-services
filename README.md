@@ -45,3 +45,10 @@ curl -i http://localhost:3001/emit
 
 - which should trigger a message from the publisher service
 - that is then processed by the consumer service (check the logs)
+
+Testing RPC command:
+
+```
+nats request testing.command "[1,2,3]"
+nats request testing.command "[1,42,3]"
+```
